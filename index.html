@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моё резюме</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Боковые полосы */
+        .side {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 15%;
+            background-color: #000;
+            z-index: -1;
+        }
+
+        .side-left {
+            left: 0;
+        }
+
+        .side-right {
+            right: 0;
+        }
+
+        /* Контейнер для контента */
+        .content {
+            max-width: 70%;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        header {
+            background-color: #ff8800;
+            color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #ff8800;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2a2a2a;
+            color: #ff8800;
+            font-size: 0.9em;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* Оранжевые точки */
+        .dot {
+            position: absolute;
+            background-color: #ff8800;
+            border-radius: 50%;
+            animation: drip 5s infinite;
+        }
+
+        /* Генерация точек */
+        .dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            z-index: -1;
+        }
+
+        .dots .dot:nth-child(1) {
+            width: 10px;
+            height: 10px;
+            top: 20px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .dots .dot:nth-child(2) {
+            width: 12px;
+            height: 12px;
+            top: 40px;
+            left: 30%;
+            animation-delay: 1s;
+        }
+
+        .dots .dot:nth-child(3) {
+            width: 8px;
+            height: 8px;
+            top: 10px;
+            left: 50%;
+            animation-delay: 2s;
+        }
+
+        .dots .dot:nth-child(4) {
+            width: 10px;
+            height: 10px;
+            top: 30px;
+            left: 70%;
+            animation-delay: 3s;
+        }
+
+        .dots .dot:nth-child(5) {
+            width: 15px;
+            height: 15px;
+            top: 60px;
+            left: 90%;
+            animation-delay: 4s;
+        }
+
+        @keyframes drip {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(20px);
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Боковые полосы -->
+    <div class="side side-left">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <div class="side side-right">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="content">
+        <header>
+            <h1>Моё резюме</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Цель резюме</h2>
+                <p>Здесь ваша цель.</p>
+            </section>
+            <section>
+                <h2>Личные данные</h2>
+                <ul>
+                    <li>Имя: [Ваше имя]</li>
+                    <li>Email: [Ваш email]</li>
+                    <li>Телефон: [Ваш телефон]</li>
+                </ul>
+            </section>
+            <!-- Добавьте другие секции -->
+        </main>
+        <footer>
+            <p>Создано вами с ❤️</p>
+        </footer>
+    </div>
+</body>
+</html>
