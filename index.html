@@ -95,6 +95,20 @@
             border-radius: 50%;
             animation: drip 5s infinite;
         }
+         /* Распределение точек */
+        .side-left .dot, .side-right .dot {
+            width: calc(5px + 10px * var(--size));
+            height: calc(5px + 10px * var(--size));
+            top: calc(1% + var(--top) * 98%);
+            left: calc(5% + var(--left) * 90%);
+        }
+
+        /* Градиент плотности */
+        .side-left .dots, .side-right .dots {
+            --size: random();
+            --top: random();
+            --left: random();
+        }
 
         /* Генерация точек */
         .dots {
