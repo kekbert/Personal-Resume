@@ -28,6 +28,7 @@
             width: 15%;
             background-color: #000;
             z-index: -1;
+            overflow: hidden;
         }
 
         .side-left {
@@ -38,6 +39,51 @@
             right: 0;
         }
 
+        /* Контейнер для точек */
+        .dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Точки */
+        .dot {
+            position: absolute;
+            background-color: #ff8800;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: drip 5s infinite;
+        }
+
+        /* Распределение точек */
+        .dot:nth-child(odd) {
+            animation-duration: 4s;
+        }
+
+        .dot:nth-child(even) {
+            animation-duration: 6s;
+        }
+
+        /* Анимация капания */
+        @keyframes drip {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(20px);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         /* Контейнер для контента */
         .content {
             max-width: 70%;
@@ -45,6 +91,8 @@
             background-color: #2a2a2a;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            margin-top: 20px;
         }
 
         header {
@@ -60,116 +108,10 @@
             font-size: 2.5em;
         }
 
-        section {
-            margin-bottom: 30px;
-        }
-
         section h2 {
             border-bottom: 2px solid #ff8800;
             display: inline-block;
             margin-bottom: 10px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #2a2a2a;
-            color: #ff8800;
-            font-size: 0.9em;
-            border-radius: 0 0 10px 10px;
-        }
-
-        /* Оранжевые точки */
-        .dot {
-            position: absolute;
-            background-color: #ff8800;
-            border-radius: 50%;
-            animation: drip 5s infinite;
-        }
-        
-         /* Распределение точек */
-        .side-left .dot, .side-right .dot {
-            width: calc(5px + 10px * var(--size));
-            height: calc(5px + 10px * var(--size));
-            top: calc(1% + var(--top) * 98%);
-            left: calc(5% + var(--left) * 90%);
-        }
-
-        /* Градиент плотности */
-        .side-left .dots, .side-right .dots {
-            --size: random();
-            --top: random();
-            --left: random();
-        }
-
-        /* Генерация точек */
-        .dots {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            z-index: -1;
-        }
-
-        .dots .dot:nth-child(1) {
-            width: 10px;
-            height: 10px;
-            top: 20px;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .dots .dot:nth-child(2) {
-            width: 12px;
-            height: 12px;
-            top: 40px;
-            left: 30%;
-            animation-delay: 1s;
-        }
-
-        .dots .dot:nth-child(3) {
-            width: 8px;
-            height: 8px;
-            top: 10px;
-            left: 50%;
-            animation-delay: 2s;
-        }
-
-        .dots .dot:nth-child(4) {
-            width: 10px;
-            height: 10px;
-            top: 30px;
-            left: 70%;
-            animation-delay: 3s;
-        }
-
-        .dots .dot:nth-child(5) {
-            width: 15px;
-            height: 15px;
-            top: 60px;
-            left: 90%;
-            animation-delay: 4s;
-        }
-
-        @keyframes drip {
-            0%, 100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            50% {
-                transform: translateY(20px);
-                opacity: 0.5;
-            }
         }
     </style>
 </head>
@@ -177,20 +119,18 @@
     <!-- Боковые полосы -->
     <div class="side side-left">
         <div class="dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+            <div class="dot" style="width: 8px; height: 8px; top: 10px; left: 20%;"></div>
+            <div class="dot" style="width: 10px; height: 10px; top: 50px; left: 40%;"></div>
+            <div class="dot" style="width: 12px; height: 12px; top: 100px; left: 60%;"></div>
+            <!-- Добавьте больше точек по аналогии -->
         </div>
     </div>
     <div class="side side-right">
         <div class="dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+            <div class="dot" style="width: 8px; height: 8px; top: 5px; left: 10%;"></div>
+            <div class="dot" style="width: 10px; height: 10px; top: 45px; left: 30%;"></div>
+            <div class="dot" style="width: 12px; height: 12px; top: 90px; left: 80%;"></div>
+            <!-- Добавьте больше точек по аналогии -->
         </div>
     </div>
 
