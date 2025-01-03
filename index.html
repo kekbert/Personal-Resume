@@ -24,31 +24,35 @@
         }
          /* Контейнер для контента */
     .content {
-        display: flex;
-        justify-content: space-between;
-        max-width: 70%;
-        padding: 20px;
-        background-color: #2a2a2a;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        z-index: 1;
-        margin-top: 20px;
-    }
+            display: flex;
+            justify-content: space-between;
+            max-width: 70%;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            margin-top: 20px;
+        }
 
-    .main-content {
-        flex-grow: 1;
-    }
+        .main-content {
+            flex-grow: 1;
+        }
 
-    .image-container {
-        width: 200px; /* Устанавливаем ширину изображения */
-        height: auto;
-    }
+        /* Изображение */
+        .image-container {
+            width: 200px; /* Устанавливаем ширину изображения */
+            height: auto;
+            margin-left: 20px;
+        }
 
-    .image-container img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            object-fit: cover;
+        }
         
         /* Боковые полосы */
         .side {
@@ -203,11 +207,14 @@
                 <p>Заміщення вакантної посади Product Ops. Specialist</p>
             </div>
         </section>
-        <div class="image-container">
-        <a href="https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp" target="_blank">
-            <img src="your-image.jpg" alt="Image description">
-        </a>
-        </div>
+         <section>
+                <h2>Моє фото</h2>
+                <div class="image-container">
+                    <a href="https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp" target="_blank">
+                        <img src="your-image.jpg" alt="Image description">
+                    </a>
+                </div>
+        </section>
         
         <section>
             <h2>Особисті дані</h2>
